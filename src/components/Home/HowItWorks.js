@@ -53,6 +53,8 @@ export default function HowItWorks() {
               position={{ base: 'relative', md: 'absolute' }}
               color='gray.300'
               zIndex={-9}
+              top={{ md: '-10px' }}
+              left={{ lg: '-60px' }}
             >
               {i.id}
             </Text>

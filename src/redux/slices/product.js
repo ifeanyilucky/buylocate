@@ -102,12 +102,12 @@ const slice = createSlice({
         if (product.id === productId) {
           return {
             ...product,
-            quantity: product.quantity + 1,
+            quantity: product.quantity - 1,
           };
-          return product;
         }
-        state.checkout.cart = updateCart;
+        return product;
       });
+      state.checkout.cart = updateCart;
     },
     createBilling(state, action) {
       const discount = action.payload;

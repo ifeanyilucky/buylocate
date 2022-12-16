@@ -60,7 +60,7 @@ export default function NewAddress({ isOpen, onClose }) {
 
   const [loading, setLoading] = useState(false);
   const onSubmit = (values) => {
-    dispatch(addNewAddressBook(values, setLoading));
+    dispatch(addNewAddressBook(values, setLoading, onClose));
   };
   return (
     <>

@@ -28,17 +28,17 @@ export default function DesktopNav() {
             <PopoverTrigger>
               <ChakraLink
                 p={2}
-                fontSize={'md'}
+                as={Link}
+                fontSize={{ lg: 'lg', md: 'md' }}
                 fontWeight={500}
+                to={navItem.to ?? '#'}
                 color={linkColor}
                 _hover={{
-                  textDecoration: 'none',
+                  textDecoration: 'underline',
                   color: linkHoverColor,
                 }}
               >
-                <Link to={navItem.to ?? '#'}>
-                  <div> {navItem.label}</div>
-                </Link>
+                {navItem.label}
               </ChakraLink>
             </PopoverTrigger>
 
@@ -77,13 +77,14 @@ const DesktopSubNav = ({ label, to, subLabel }) => {
       >
         <Stack direction={'row'} align={'center'}>
           <Box>
-            <Text
+            <ChakraLink
+              fontWeight='700'
               transition={'all .3s ease'}
               _groupHover={{ color: 'brand.400' }}
               fontWeight={500}
             >
               {label}
-            </Text>
+            </ChakraLink>
             <Text fontSize={'sm'}>{subLabel}</Text>
           </Box>
           <Flex

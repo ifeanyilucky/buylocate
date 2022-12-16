@@ -169,10 +169,8 @@ export default function Marque() {
           size={{ base: 'xl', md: '3xl' }}
           color='white'
         >
-          <Text as='span' opacity={0.5}>
-            #buylocate
-          </Text>{' '}
-          anywhere- with over 4000 customers and counting.
+          <span style={{ opacity: 0.5 }}>#buylocate</span> anywhere- with over
+          4,000 customers and counting.
         </Heading>
       </Box>
       <Marquee />

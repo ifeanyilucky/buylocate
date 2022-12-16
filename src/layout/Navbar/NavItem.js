@@ -9,19 +9,20 @@ export const NAV_ITEMS = [
     to: PATH_PAGES.pricing,
   },
   {
-    label: 'Company',
-    children: [
-      {
-        label: 'About us',
-        subLabel: 'Get to know more about Buylocate',
-        to: PATH_PAGES.about,
-      },
-      {
-        label: 'Our Team',
-        subLabel: 'Up-and-coming Designers',
-        to: '/our-team',
-      },
-    ],
+    label: 'About us',
+    to: PATH_PAGES.about,
+    // children: [
+    //   {
+    //     label: 'About us',
+    //     subLabel: 'Get to know more about Buylocate',
+    //     to: PATH_PAGES.about,
+    //   },
+    //   {
+    //     label: 'Our Team',
+    //     subLabel: 'Up-and-coming Designers',
+    //     to: '/our-team',
+    //   },
+    // ],
   },
   {
     label: 'FAQs',

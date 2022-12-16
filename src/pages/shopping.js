@@ -17,6 +17,8 @@ import CartItems from '../components/Shopping/CartItems';
 import ProductModal from '../components/Shopping/ProductModal';
 import { useDisclosure } from '@chakra-ui/react';
 import { Items } from '../components/storeItems';
+import Page from 'src/components/Page';
+import { SearchBar } from 'src/components/searchBar';
 
 function Shopping() {
   console.log(Items);
@@ -48,7 +50,7 @@ function Shopping() {
       <Container maxW='7xl' my={20}>
         <Grid
           templateColumns={{ md: 'repeat(4, 1fr)', base: 'repeat(2, 1fr)' }}
-          gap={10}
+          gap={4}
         >
           {Array.from({ length: 8 })
             .fill('a')
@@ -61,15 +63,13 @@ function Shopping() {
   }
 
   return (
-    <>
+    <Page title='Shopping'>
       <Container maxW='7xl'>
-        <Stack maxW='md' mx='auto' mb={5}>
-          <Input
-            py='20px'
-            borderRadius='full'
-            variant='filled'
-            placeholder='Search...'
-            onChange={(e) => setSearch(e.target.value)}
+        <Stack maxW='md' mb={5}>
+          <SearchBar
+            mb={{ base: '10px', md: 'unset' }}
+            me='10px'
+            borderRadius='30px'
           />
         </Stack>
         <div className=' mt-5' id='vegetable'>
@@ -84,7 +84,7 @@ function Shopping() {
           </SimpleGrid>
         </div>
       </Container>
-    </>
+    </Page>
   );
 }
 

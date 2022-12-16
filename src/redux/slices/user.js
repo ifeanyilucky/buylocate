@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { filter, map } from 'lodash';
 import axios from 'src/utils/axios';
 
 const initialState = {
@@ -45,6 +46,26 @@ const slice = createSlice({
     addAddressSuccess(state, action) {
       state.isLoading = false;
       state.addressBook = [...state.addressBook, action.payload];
+    },
+
+    // DELETE ADDRESS
+    deleteAddress(state, action) {
+      const updateAddressBook = filter(state.addressBook, (item) => {
+        item._id !== action.payload;
+      });
+      state.isLoading = false;
+      state.addressBook = updateAddressBook;
+    },
+
+    // EDIT ADDRESS
+    editAddressSuccess(state, action) {
+      const editAddressBook = map(state.addressBook, (item) => {
+        if (item._id === action.payload._id) {
+          return { ...action.payload };
+        }
+        return item;
+      });
+      state.addressBook = editAddressBook;
     },
     // GET INVOICES
     getInvoicesSuccess(state, action) {
@@ -114,16 +135,43 @@ export function getAddressBook() {
     }
   };
 }
-export function addNewAddressBook(payload, setLoading) {
+export function addNewAddressBook(payload, setLoading, onClose) {
   setLoading(true);
   return async (dispatch) => {
     try {
       const { data } = await axios.post('/account/address/new', payload);
       dispatch(slice.actions.addAddressSuccess(data.address));
       setLoading(false);
+      onClose();
     } catch (error) {
       console.log(error);
       setLoading(false);
+    }
+  };
+}
+
+export function removeAddress(id) {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.delete(`/account/address/delete/${id}`);
+      dispatch(slice.actions.deleteAddress(id));
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+export function editAddress(id, values, setEditOpen) {
+  return async (dispatch) => {
+    slice.actions.startLoading();
+    try {
+      const { data } = await axios.patch(`/account/address/edit/${id}`, {
+        ...values,
+      });
+      dispatch(slice.actions.editAddressSuccess(data.address._id));
+      setEditOpen(false);
+    } catch (error) {
+      console.log(error);
     }
   };
 }

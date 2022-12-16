@@ -15,11 +15,11 @@ export const inputStyles = {
             bg: mode('transparent', 'navy.800')(props),
             border: '1px solid',
             color: mode('secondaryGray.900', 'white')(props),
-            borderColor: mode('secondaryGray.100', 'whiteAlpha.100')(props),
+            borderColor: mode('secondaryGray.400', 'gray.400')(props),
             borderRadius: '16px',
             fontSize: 'sm',
             p: '20px',
-            _placeholder: { color: 'secondaryGray.400' },
+            _placeholder: { color: 'gray.400' },
           },
         }),
         auth: (props) => ({

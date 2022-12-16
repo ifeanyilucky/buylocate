@@ -14,7 +14,18 @@ import { useForm } from 'react-hook-form';
 import Page from 'src/components/Page';
 
 export default function RequestQuote() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      phoneNumber: '',
+      subject: '',
+      errandDetails: '',
+    },
+  });
+  const onSubmit = (values) => {
+    console.log(values);
+  };
   return (
     <Page title='Request a quote'>
       <Container maxW='6xl'>
@@ -28,7 +39,7 @@ export default function RequestQuote() {
         </Stack>
         <Card my={10} maxW={'3xl'} mx='auto'>
           <CardBody>
-            <Stack spacing={8}>
+            <Stack as='form' spacing={8} onSubmit={handleSubmit(onSubmit)}>
               <Stack
                 width='100%'
                 direction={{ md: 'row', sm: 'column' }}
@@ -41,6 +52,7 @@ export default function RequestQuote() {
                     type='text'
                     variant={'filled'}
                     placeholder='Full name'
+                    {...register('fullName')}
                   />
                 </Stack>
                 <Stack spacing={2} width='100%'>
@@ -50,6 +62,7 @@ export default function RequestQuote() {
                     type='email'
                     variant={'filled'}
                     placeholder='Email'
+                    {...register('email')}
                   />
                 </Stack>
               </Stack>
@@ -61,6 +74,7 @@ export default function RequestQuote() {
                     type='text'
                     variant={'filled'}
                     placeholder='Phone number*'
+                    {...register('phoneNumber')}
                   />
                 </Stack>
               </Stack>
@@ -71,6 +85,7 @@ export default function RequestQuote() {
                   type='text'
                   variant={'filled'}
                   placeholder='Subject'
+                  {...register('subject')}
                 />
               </Stack>
               <Stack spacing={2} width='100%'>
@@ -79,9 +94,10 @@ export default function RequestQuote() {
                   type='text'
                   variant={'filled'}
                   placeholder='Errand details*'
+                  {...register('errandDetails')}
                 />
               </Stack>
-              <Button py={7} colorScheme='brand'>
+              <Button py={7} colorScheme='brand' type='submit'>
                 Submit
               </Button>
             </Stack>

@@ -326,3 +326,31 @@ section {
     display: none;
   }
 }
+
+.bg-gradient {
+  background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 0.01),
+      rgba(255, 255, 255, 1) 85%
+    ),
+    radial-gradient(
+      ellipse at top left,
+      rgba(13, 110, 253, 0.5),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at top right,
+      rgba(255, 228, 132, 0.5),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at center right,
+      rgba(112.520718, 44.062154, 249.437846, 0.5),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at center left,
+      rgba(254, 51, 132, 0.5),
+      transparent 50%
+    );
+}

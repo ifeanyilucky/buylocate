@@ -3,19 +3,8 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
-  Icon,
-  Link,
-  Popover,
-  Menu,
-  MenuItem,
-  MenuList,
-  MenuDivider,
-  MenuButton,
-  PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
@@ -27,20 +16,16 @@ import { useLocation, Link as RouterLink } from 'react-router-dom';
 import Logo from '../../components/Logo';
 import { useStateContext } from '../../context/stateContext';
 import CartItems from '../../components/Shopping/CartItems';
-import { CloseIcon, HamburgerIcon } from '../../components/svgIcons';
 import DesktopNav from './desktopNav';
 import MobileNav from './MobileNav';
-import {
-  BasketIcon,
-  TrolleyIcon,
-  AccountIcon,
-} from '../../components/svgIcons';
-import { PATH_AUTH, PATH_DASHBOARD } from 'src/routes/path';
+import { TrolleyIcon } from '../../components/svgIcons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useSelector } from 'src/redux/store';
 import { sum } from 'lodash';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import { useDispatch } from 'src/redux/store';
 import { getCart } from 'src/redux/slices/product';
+import AccountPopover from './AccountPopover';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle, onClose } = useDisclosure();
@@ -64,20 +49,7 @@ export default function WithSubnavigation() {
       onClose();
     }
   }, [location.pathname]);
-  const accountItem = [
-    {
-      title: 'Account setting',
-      link: PATH_DASHBOARD.root,
-    },
-    {
-      title: 'Order history',
-      link: PATH_DASHBOARD.orders,
-    },
-    {
-      title: 'Address',
-      link: PATH_DASHBOARD.addressList,
-    },
-  ];
+
   return (
     <Container maxW={{ lg: '1200px', md: 'full', sm: 'full' }}>
       {showCart ? <CartItems /> : ''}
@@ -145,34 +117,7 @@ export default function WithSubnavigation() {
             aria-label='Toggle Cart'
             onClick={() => setShowCart(true)}
           />
-          <Menu>
-            <MenuButton
-              as={Button}
-              rounded={'full'}
-              variant={'link'}
-              cursor={'pointer'}
-              minW={0}
-            >
-              <IconButton
-                display={{ base: 'inline-flex', md: 'inline-flex' }}
-                fontSize={'md'}
-                as={RouterLink}
-                fontWeight={600}
-                icon={<AccountIcon />}
-                to={PATH_AUTH.login}
-              />
-            </MenuButton>
-            <MenuList>
-              {accountItem.map((item) => (
-                <MenuItem as={RouterLink} to={item.link}>
-                  {item.title}
-                </MenuItem>
-              ))}
-
-              <MenuDivider />
-              <MenuItem>Log out</MenuItem>
-            </MenuList>
-          </Menu>
+          <AccountPopover />
         </Stack>
       </Flex>
 

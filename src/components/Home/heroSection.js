@@ -83,11 +83,7 @@ export default function HeroSection() {
                       A helping hand to make your life easier
                     </Heading>
                   </div>
-                  <Text
-                    fontSize={{ base: 'md', lg: 'lg' }}
-                    color={'gray.500'}
-                    my={'8'}
-                  >
+                  <Text color={'gray.500'} my={'8'}>
                     Our errand service is designed for people in the diaspora
                     who wants to get one or two things done in Nigeria but they
                     are limited with help.

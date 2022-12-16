@@ -28,7 +28,7 @@ const ListHeader = ({ children }) => {
 
 export default function LargeWithLogoCentered() {
   return (
-    <Box position='relative'>
+    <div className='bg-gradient'>
       <CallToAction />
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
@@ -103,12 +103,12 @@ export default function LargeWithLogoCentered() {
           © 2022 Buylocate Africa. All rights reserved
         </Text>
       </Box>
-      <Blur
+      {/* <Blur
         position={'absolute'}
         bottom={10}
         right={-10}
         style={{ filter: 'blur(100px)' }}
-      />
-    </Box>
+      /> */}
+    </div>
   );
 }

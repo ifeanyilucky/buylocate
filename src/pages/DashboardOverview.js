@@ -22,13 +22,9 @@ import AllOrders from 'src/components/Dashboard/Orders';
 import { useDispatch, useSelector } from 'src/redux/store';
 import { getOrders } from 'src/redux/slices/user';
 
-const Orders = () => {
+const DashboardOverview = () => {
   const { user } = useAuth();
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getOrders());
-  }, [dispatch]);
-  const { orders } = useSelector((state) => state.user);
 
   const [tabIndex, setTabIndex] = useState('Overview');
   const tabItem = [
@@ -46,11 +42,15 @@ const Orders = () => {
     },
   ];
 
+  const greetings = ['Good morning', 'Good afternoon', 'Good evening'][
+    parseInt((new Date().getHours() / 24) * 3)
+  ];
+
   return (
-    <Container maxW='7xl' height='70vh'>
+    <Container maxW='7xl' minH='90vh'>
       <Stack textAlign='center' my={10} maxW='xl' margin='0 auto'>
         <Heading size={{ base: 'lg', md: 'xl' }}>
-          Welcome back {user?.firstName}
+          Hello {user?.firstName}, {greetings}!
         </Heading>
         <Text color='gray'>
           Welcome to your Buylocate.com account! Here you can modify your
@@ -81,4 +81,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default DashboardOverview;

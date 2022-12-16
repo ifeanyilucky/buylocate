@@ -20,7 +20,7 @@ import RequestQuote from 'src/pages/RequestQuote';
 import CheckoutLayout from 'src/layout/CheckoutLayout';
 import DashboardOverview from 'src/pages/DashboardOverview';
 import Address from 'src/pages/Addresses';
-
+import Contact from 'src/pages/contact';
 export default function Router() {
   return useRoutes([
     {
@@ -31,7 +31,7 @@ export default function Router() {
         { path: '/about', element: <About /> },
         { path: '/privacy-policy', element: <PrivacyPolicy /> },
         { path: '/request-quote', element: <RequestQuote /> },
-
+        { path: '/contact-us', element: <Contact /> },
         { path: '/faqs', element: <Faqs /> },
         { path: '/pricing', element: <Pricing /> },
         { path: '/shopping', element: <Shopping /> },
