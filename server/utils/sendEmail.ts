@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SMTPClient } from 'emailjs';
 
 interface IOptions {
