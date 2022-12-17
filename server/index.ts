@@ -35,7 +35,7 @@ app.use(errorHandlerMiddleware);
 const PORT = process.env.PORT || 3130;
 
 const start = async () => {
-  await connectMongo('mongodb://localhost:27017/buylocate');
+  await connectMongo(process.env.MONGODB_URI);
   app.listen(PORT, () => {
     console.log(`server is running on https://localhost:${PORT}/api`);
   });
