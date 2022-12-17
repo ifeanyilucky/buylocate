@@ -4,10 +4,30 @@
   font-family: 'Duplicate Sans';
   src: url('./fonts/DuplicateSans-Medium.woff2');
 }
+@font-face {
+  font-family: 'Plus Jakarta';
+  font-weight: 400;
+  src: url('./fonts/PlusJakartaSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta';
+  font-weight: 200;
+  src: url('./fonts/PlusJakartaSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta';
+  font-weight: 800;
+  src: url('./fonts/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta';
+  font-weight: 600;
+  src: url('./fonts/PlusJakartaSans-SemiBold.ttf') format('truetype');
+}
 
 $primary-color: #305ce5;
-$secondary-font: 'Plus Jakarta Sans', sans-serif;
-$primary-font: 'Plus Jakarta Sans', sans-serif;
+$secondary-font: 'Plus Jakarta', sans-serif;
+$primary-font: 'Plus Jakarta', sans-serif;
 $faded-bg: rgba(228, 232, 230, 0.4);
 
 // GENERAL STYLING

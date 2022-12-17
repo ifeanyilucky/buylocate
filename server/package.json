@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "ts-node-dev index.ts",
-    "build": "rimraf dist && tsc",
+    "build": "npx rimraf dist && tsc",
     "start": "npm run build && node dist/index.js"
   },
   "keywords": [],

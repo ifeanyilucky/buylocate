@@ -2,7 +2,7 @@ export const TextStyles = {
   components: {
     Text: {
       baseStyle: {
-        fontFamily: `'Plus Jakarta Sans', sans-serif`,
+        fontFamily: `'Plus Jakarta', sans-serif`,
         fontWeight: '500',
         fontSize: '16px',
       },
