@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { HeroVector } from '../svgIcons';
 import { fadeInUp, staggerText } from '../animation';
 import { Link as RouterLink } from 'react-router-dom';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 import {
   SimpleGrid,
   Box,
@@ -11,9 +12,11 @@ import {
   Heading,
   Text,
   Button,
+  ButtonGroup,
 } from '@chakra-ui/react';
 import HeroImageForMobile from './HeroImageForMobile';
 import { PATH_PAGES } from 'src/routes/path';
+import { Header } from '../custom';
 
 export default function HeroSection() {
   const tl = useRef(null);
@@ -69,33 +72,32 @@ export default function HeroSection() {
                 <div className='hero-content' ref={(el) => (heroContent = el)}>
                   <HeroVector />
                   <div>
-                    <Heading
-                      lineHeight={1.3}
-                      fontSize={{
-                        base: '32px',
-                        sm: '36px',
-                        md: '45px',
-                        lg: '6xl',
-                      }}
-                      as={'span'}
-                      position={'relative'}
-                    >
-                      A helping hand to make your life easier
-                    </Heading>
+                    <Header>A helping hand to make your life easier</Header>
                   </div>
-                  <Text color={'gray.500'} my={'8'}>
+                  <Text my={'8'}>
                     Our errand service is designed for people in the diaspora
                     who wants to get one or two things done in Nigeria but they
                     are limited with help.
                   </Text>
-                  <Button
-                    size='lg'
-                    colorScheme='brand'
-                    as={RouterLink}
-                    to={PATH_PAGES.requestQuote}
-                  >
-                    Request a quote
-                  </Button>
+                  <ButtonGroup spacing={3}>
+                    <Button
+                      size='lg'
+                      colorScheme='brand'
+                      as={RouterLink}
+                      to={PATH_PAGES.requestQuote}
+                      rightIcon={<ArrowForwardIcon />}
+                    >
+                      Request a quote
+                    </Button>
+                    <Button
+                      colorScheme='gray'
+                      as={RouterLink}
+                      to={PATH_PAGES.shopping}
+                      rightIcon={<ArrowForwardIcon />}
+                    >
+                      Shop now
+                    </Button>
+                  </ButtonGroup>
                 </div>
               </Stack>
             </Stack>

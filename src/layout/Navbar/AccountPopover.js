@@ -50,7 +50,6 @@ export default function AccountPopover() {
             {item.title}
           </MenuItem>
         ))}
-
         <MenuDivider />
         <MenuItem>Log out</MenuItem>
       </MenuList>

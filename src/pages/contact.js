@@ -26,7 +26,7 @@ export default function Contact() {
       <Container maxW='7xl' mt={20}>
         <Box maxW={'600px'}>
           <Stack mt={10} spacing={{ base: '12px', md: '90px' }}>
-            <Heading size='lg'>Contact us</Heading>
+            <Heading size={{ md: 'lg', base: 'md' }}>Contact us</Heading>
             <Heading fontSize={{ base: '4xl', md: '7xl' }}>
               We're here to help you run errands
             </Heading>
@@ -45,7 +45,8 @@ export default function Contact() {
           </GridItem>
           <GridItem w='100%' colSpan={2}>
             <Box
-              bgColor='gray.200'
+              borderWidth='1px'
+              rounded='2xl'
               as='form'
               p={{ base: 5, md: 10 }}
               onSubmit={handleSubmit(onSubmit)}

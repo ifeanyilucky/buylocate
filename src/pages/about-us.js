@@ -10,6 +10,7 @@ import {
   GridItem,
 } from '@chakra-ui/react';
 import Page from '../components/Page';
+import { Header } from 'src/components/custom';
 
 const About = () => {
   return (
@@ -21,15 +22,8 @@ const About = () => {
           textAlign='center'
           mb={10}
         >
-          <Text
-            as='h1'
-            fontSize={{ base: '4xl', md: '6xl' }}
-            lineHeight={1.2}
-            fontWeight='900'
-          >
-            We create virtual commerce to physical
-          </Text>
-          <Text as='div' fontSize={{ base: 'xl', md: '2xl' }}>
+          <Header>We create virtual commerce to physical</Header>
+          <Text as='div' fontSize={{ base: 'xl', md: '2xl' }} py={5}>
             With Buylocate you can be at two different places at the Same time (
             Virtual & Physical)
           </Text>

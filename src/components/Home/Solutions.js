@@ -9,6 +9,8 @@ import {
 } from '@chakra-ui/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { Header2 } from '../custom';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 function Solutions() {
   let tl = useRef(null);
@@ -65,15 +67,10 @@ function Solutions() {
             >
               Solutions
             </Text>
-            <Text
-              fontWeight={700}
-              lineHeight={1.2}
-              as={'span'}
-              fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}
-            >
-              The 1-space all view experience technology
-            </Text>
-            <Text fontSize={{ base: 'md', lg: 'lg' }} color='gray.500'>
+            <Header2>
+              We can be your great business partner and help you grow strongly.
+            </Header2>
+            <Text fontSize={{ base: 'md', lg: 'lg' }}>
               Whether you are in Asia, Europe, America, Antartica or Australia,
               distance should not be a barrier. When you need an errand runner
               or a wheel to get the task done, we are here to help run errands
@@ -81,7 +78,11 @@ function Solutions() {
               help buy stuff from the market, drive folks around and many more.
             </Text>
             <Box>
-              <Button colorScheme='brand' size='lg'>
+              <Button
+                colorScheme='brand'
+                size='lg'
+                rightIcon={<ArrowForwardIcon />}
+              >
                 Shop now
               </Button>
             </Box>

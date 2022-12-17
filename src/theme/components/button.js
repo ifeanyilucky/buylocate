@@ -3,12 +3,14 @@ export const buttonStyles = {
   components: {
     Button: {
       baseStyle: {
-        borderRadius: '5px',
         boxShadow: '45px 76px 113px 7px rgba(112, 144, 176, 0.08)',
         transition: '.25s all ease',
         boxSizing: 'border-box',
-        py: '15px',
+
         fontWeight: '400',
+        padding: '1.6rem 1.5rem',
+        borderRadius: '0.825rem',
+        fontSize: '14px',
         _focus: {
           boxShadow: 'none',
         },
@@ -29,6 +31,22 @@ export const buttonStyles = {
           _hover: {
             bg: mode('brand.600', 'brand.400')(props),
           },
+        }),
+        main: (props) => ({
+          bg: mode('brand.500', 'brand.400')(props),
+          color: 'white',
+          _focus: {
+            bg: mode('brand.500', 'brand.400')(props),
+          },
+          _active: {
+            bg: mode('brand.500', 'brand.400')(props),
+          },
+          _hover: {
+            bg: mode('brand.600', 'brand.400')(props),
+          },
+          padding: '1.6rem 1.5rem',
+          borderRadius: '0.825rem',
+          fontSize: '14px',
         }),
         darkBrand: (props) => ({
           bg: mode('brand.900', 'brand.400')(props),
