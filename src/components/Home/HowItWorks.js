@@ -1,5 +1,6 @@
 import React from 'react';
 import { SimpleGrid, Stack, Text, Heading, Container } from '@chakra-ui/react';
+import { Header2 } from '../custom';
 
 const items = [
   { id: '01', description: 'Shop for your local groceries and gift items or' },
@@ -21,16 +22,8 @@ const items = [
 export default function HowItWorks() {
   return (
     <Container maxW='7xl' py={20}>
-      <Stack align='center'>
-        <Heading
-          fontWeight={700}
-          lineHeight={1.2}
-          size={{ base: 'xl', md: '2xl' }}
-          align='center'
-          py={10}
-        >
-          How it works.
-        </Heading>
+      <Stack align='center' py={10}>
+        <Header2>How it works.</Header2>
       </Stack>
 
       <SimpleGrid
@@ -58,9 +51,7 @@ export default function HowItWorks() {
             >
               {i.id}
             </Text>
-            <Text fontSize={{ base: 'md', lg: 'lg' }} color='gray.500'>
-              {i.description}
-            </Text>
+            <Text fontSize={{ base: 'md', lg: 'lg' }}>{i.description}</Text>
           </Stack>
         ))}
       </SimpleGrid>

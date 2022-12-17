@@ -166,7 +166,7 @@ export default function Marque() {
         <Heading
           as='span'
           fontWeight='800'
-          size={{ base: 'xl', md: '3xl' }}
+          size={{ base: '2xl', md: '4xl' }}
           color='white'
         >
           <span style={{ opacity: 0.5 }}>#buylocate</span> anywhere- with over

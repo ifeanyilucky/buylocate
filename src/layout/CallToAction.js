@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Stack, Text, Button, Box, Heading } from '@chakra-ui/react';
+import { Header2 } from 'src/components/custom';
 
 function CallToAction() {
   return (
@@ -13,15 +14,10 @@ function CallToAction() {
         >
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <Stack spacing={6} w={'full'} maxW={'33rem'}>
-              <Text
-                fontWeight={700}
-                lineHeight={1.2}
-                as={'span'}
-                fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}
-              >
+              <Header2>
                 Let&lsquo;s help take the stress of your shoulder
-              </Text>
-              <Text color='gray.500' fontSize={{ base: 'md', lg: 'lg' }}>
+              </Header2>
+              <Text fontSize={{ base: 'md', lg: 'lg' }}>
                 When you need help with local groceries and gift items,
                 Buylocate is here for your support and services. Simply visit
                 our marketplace to shop for grocery items.

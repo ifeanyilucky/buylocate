@@ -9,6 +9,7 @@ import {
   useColorModeValue,
   Heading,
 } from '@chakra-ui/react';
+import { Header2 } from '../custom';
 
 function ErrandsForYou() {
   return (
@@ -44,15 +45,12 @@ function ErrandsForYou() {
               >
                 Virtual Running Service
               </Text>
-              <Heading lineHeight={1.2} size={{ base: 'lg', md: '2xl' }}>
-                Let us run errands for you.
-              </Heading>
+              <Header2>Let us run errands for you.</Header2>
             </Stack>
             <Text
               className='my-4'
               fontSize={{ base: 'md', lg: 'lg' }}
               fontWeight={400}
-              color='gray.500'
             >
               Life's hectic schedule often makes it hard to complete personal
               tasks which is why Buylocate have created a reliable and

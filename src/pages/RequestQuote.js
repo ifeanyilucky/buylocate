@@ -11,6 +11,7 @@ import {
   Textarea,
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
+import { Header } from 'src/components/custom';
 import Page from 'src/components/Page';
 
 export default function RequestQuote() {
@@ -29,15 +30,13 @@ export default function RequestQuote() {
   return (
     <Page title='Request a quote'>
       <Container maxW='6xl'>
-        <Stack textAlign='center'>
-          <Text as='h2' fontSize={{ base: '3xl', md: '4xl' }} fontWeight='700'>
-            Request a Quote
-          </Text>
-          <Text fontSize={{ base: 'lg' }}>
+        <Stack textAlign='center' py='6.25rem'>
+          <Header>Request a Quote</Header>
+          <Text fontSize={{ base: 'lg', sm: '2xl' }} py={10}>
             We will get back to you within 24 hours
           </Text>
         </Stack>
-        <Card my={10} maxW={'3xl'} mx='auto'>
+        <Card my={10} maxW={'4xl'} mx='auto' shadow={'none'}>
           <CardBody>
             <Stack as='form' spacing={8} onSubmit={handleSubmit(onSubmit)}>
               <Stack

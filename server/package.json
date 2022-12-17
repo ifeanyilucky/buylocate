@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "dev": "ts-node-dev index.ts",
-    "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/index.js"
+    "build": " tsc",
+    "start": "npm run build && NODE_ENV=production node index.js"
   },
   "keywords": [],
   "author": "",

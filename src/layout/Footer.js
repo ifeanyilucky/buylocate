@@ -34,7 +34,9 @@ export default function LargeWithLogoCentered() {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
             <ListHeader>
-              <Heading size='sm'>Services</Heading>
+              <Text size='sm' fontWeight='500' as='div'>
+                Services
+              </Text>
             </ListHeader>
             <Stack direction={'row'} align={'center'} spacing={2}>
               <Link to={'#'}>Country Check</Link>
@@ -47,35 +49,61 @@ export default function LargeWithLogoCentered() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>
-              <Heading size='sm'>{footerItems[0].title}</Heading>
+              <Text size='sm' fontWeight='500' as='div'>
+                {footerItems[0].title}
+              </Text>
             </ListHeader>
             {footerItems[0].subItems.map((item) => (
-              <Link key={item.link} to={item.link}>
+              <ChakraLink
+                _hover={{ textDecor: 'underline' }}
+                as={Link}
+                key={item.link}
+                to={item.link}
+              >
                 {item.name}
-              </Link>
+              </ChakraLink>
             ))}
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>
               {' '}
-              <Heading size='sm'>{footerItems[1].title}</Heading>
+              <Text size='sm' fontWeight='500' as='div'>
+                {footerItems[1].title}
+              </Text>
             </ListHeader>
             {footerItems[1].subItems.map((item) => (
-              <Link key={item.link} to={item.link}>
+              <ChakraLink
+                _hover={{ textDecor: 'underline' }}
+                as={Link}
+                key={item.link}
+                to={item.link}
+              >
                 {item.name}
-              </Link>
+              </ChakraLink>
             ))}
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>
               {' '}
-              <Heading size='sm'>Follow Us</Heading>
+              <Text size='sm' fontWeight='500' as='div'>
+                Follow Us
+              </Text>
             </ListHeader>
-            <Link to={'#'}>Facebook</Link>
-            <Link to={'#'}>Twitter</Link>
-            <Link to={'#'}>Dribbble</Link>
-            <Link to={'#'}>Instagram</Link>
-            <Link to={'#'}>LinkedIn</Link>
+            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
+              Facebook
+            </ChakraLink>
+            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
+              Twitter
+            </ChakraLink>
+            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
+              Dribbble
+            </ChakraLink>
+            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
+              Instagram
+            </ChakraLink>
+            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
+              LinkedIn
+            </ChakraLink>
           </Stack>
         </SimpleGrid>
       </Container>
