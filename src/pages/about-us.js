@@ -46,7 +46,7 @@ const About = () => {
             >
               About Buylocate
             </Text>
-            <Text fontSize={{ base: 'md', md: 'xl' }}>
+            <Text fontSize={{ base: 'lg', md: 'xl' }}>
               Buylocate is a virtual platform that represents you anywhere in
               the World. This is an international platform that helps you get
               your shopping just the way you do it yourself. We represent you in
@@ -60,7 +60,7 @@ const About = () => {
             <Text as='h4' fontWeight='700' fontSize={{ base: 'xl', md: '2xl' }}>
               THE NEED GAP
             </Text>
-            <Text fontSize={{ base: 'md', md: 'xl' }}>
+            <Text fontSize={{ base: 'lg', md: 'xl' }}>
               Buylocate provides a platform for Nigerians in diaspora to access
               the Nigerian foodstuff markets. We create the virtue shopping
               experience to physical (V2P). So with Buylocate you can be at two

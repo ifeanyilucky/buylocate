@@ -78,6 +78,7 @@ function Solutions() {
           </Stack>
           <Stack flex={1}>
             <Image
+              ml='auto'
               src='images/grocery6.jpg'
               alt='Groceries'
               rounded='xl'

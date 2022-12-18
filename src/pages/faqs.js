@@ -11,28 +11,18 @@ import {
   Box,
 } from '@chakra-ui/react';
 import Page from '../components/Page';
+import { Header } from 'src/components/custom';
 
 function Faqs() {
   return (
     <Page>
       <Container maxW='7xl'>
         <Box maxW='768px'>
-          <Box maxW='400px' mb={10}>
-            <Stack>
-              <Text
-                as='span'
-                fontWeight='900'
-                fontSize={{ base: '2xl', lg: '5xl' }}
-              >
-                Frequently Asked Questions
-              </Text>
-            </Stack>
-            <Stack>
-              <Text
-                as='span'
-                fontWeight='600'
-                fontSize={{ base: 'xl', lg: '2xl' }}
-              >
+          <Box my={20}>
+            <Stack spacing={10}>
+              <Header>Frequently Asked Questions</Header>
+
+              <Text fontSize={{ base: 'xl', lg: '2xl' }}>
                 A handy guide to Diasporas
               </Text>
             </Stack>

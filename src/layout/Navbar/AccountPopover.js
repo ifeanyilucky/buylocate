@@ -10,6 +10,7 @@ import {
 import { Link as RouterLink } from 'react-router-dom';
 import { PATH_AUTH, PATH_DASHBOARD } from 'src/routes/path';
 import { AccountIcon } from 'src/components/svgIcons';
+import useAuth from 'src/hooks/useAuth';
 
 export default function AccountPopover() {
   const accountItem = [
@@ -26,6 +27,7 @@ export default function AccountPopover() {
       link: PATH_DASHBOARD.addressList,
     },
   ];
+  const { logout } = useAuth();
   return (
     <Menu>
       <MenuButton
@@ -38,12 +40,10 @@ export default function AccountPopover() {
         <IconButton
           display={{ base: 'inline-flex', md: 'inline-flex' }}
           fontSize={'md'}
-          variant='light'
+          variant='unstyled'
           p={0}
-          as={RouterLink}
           fontWeight={600}
           icon={<AccountIcon />}
-          to={PATH_AUTH.login}
         />
       </MenuButton>
       <MenuList>
@@ -53,7 +53,9 @@ export default function AccountPopover() {
           </MenuItem>
         ))}
         <MenuDivider />
-        <MenuItem>Log out</MenuItem>
+        <MenuItem color='red.400' onClick={logout}>
+          Log out
+        </MenuItem>
       </MenuList>
     </Menu>
   );

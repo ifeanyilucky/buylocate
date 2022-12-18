@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'src/redux/store';
 import { useEffect } from 'react';
 import { getOrders } from 'src/redux/slices/user';
 import OrderTable from './OrderTable';
+import EmptyOrders from './EmptyOrders';
 
 export default function Orders() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export default function Orders() {
         <Heading size={{ base: 'lg', md: 'xl' }}>Orders</Heading>
         <Text>Below is a history of your orders to date</Text>
       </Stack>
-      <OrderTable />
+      {!orders.length ? <EmptyOrders /> : <OrderTable />}
     </Container>
   );
 }

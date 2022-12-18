@@ -10,6 +10,7 @@ import {
   useDisclosure,
   Container,
   Badge,
+  ButtonGroup,
 } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
@@ -39,7 +40,6 @@ export default function WithSubnavigation() {
   const { cart } = checkout;
   const totalItems = sum(cart.map((item) => item.quantity));
 
-  console.log(checkout);
   useEffect(() => {
     dispatch(getCart(cart));
   }, [dispatch, cart]);
@@ -52,10 +52,14 @@ export default function WithSubnavigation() {
 
   return (
     <Container maxW={{ lg: '1200px', md: 'full', sm: 'full' }}>
-      {showCart ? <CartItems /> : ''}
-      <Flex minH={'60px'} py={{ base: 2, md: 8 }} alignItems={'center'}>
+      <Flex
+        minH={'60px'}
+        py={{ base: 2, md: 8 }}
+        alignItems={'center'}
+        justifyContent={{ md: 'space-between', base: 'start' }}
+      >
         <Flex
-          flex={{ base: 1, md: 'auto' }}
+          flex={{ md: '1', base: 'none' }}
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
         >
@@ -68,62 +72,48 @@ export default function WithSubnavigation() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex
-          flex={{ base: 1 }}
-          justify={{ base: 'center', md: 'start' }}
-          alignItems={'center'}
-        >
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
-          >
-            <Logo />
-          </Text>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
+        <Logo />
+
+        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <DesktopNav />
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={1}
-        >
-          <IconButton
-            icon={
-              <>
-                <TrolleyIcon w={2} h={3} />
-
-                <Box
-                  as='span'
-                  style={{
-                    fontSize: '12px',
-                    background: 'brand',
-                    borderRadius: '50%',
-                    color: '#fff',
-                    padding: '0 5px',
-                    verticalAlign: 'top',
-                    marginLeft: '-8px',
-                  }}
-                >
-                  {totalItems}
-                </Box>
-              </>
-            }
-            variant='unstyled'
-            aria-label='Toggle Cart'
-            onClick={() => setShowCart(true)}
-          />
-          <AccountPopover />
+        <Stack flex={1} justify={'flex-end'} direction={'row'} spacing={1}>
+          <ButtonGroup>
+            <IconButton
+              icon={
+                <>
+                  <TrolleyIcon />
+                  <Box
+                    as='span'
+                    style={{
+                      fontSize: '12px',
+                      background: 'brand',
+                      borderRadius: '50%',
+                      color: '#fff',
+                      padding: '0 5px',
+                      verticalAlign: 'top',
+                      marginLeft: '-8px',
+                    }}
+                  >
+                    {totalItems}
+                  </Box>
+                </>
+              }
+              variant='unstyled'
+              aria-label='Toggle Cart'
+              onClick={() => setShowCart(true)}
+            />
+            <AccountPopover />
+          </ButtonGroup>
         </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
+      {showCart ? <CartItems /> : ''}
     </Container>
   );
 }

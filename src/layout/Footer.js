@@ -17,6 +17,7 @@ import { ReactNode } from 'react';
 import Logo from '../components/Logo';
 import CallToAction from './CallToAction';
 import { Blur } from './AuthLayout';
+import { socialMedia } from 'src/config';
 
 const ListHeader = ({ children }) => {
   return (
@@ -84,26 +85,20 @@ export default function LargeWithLogoCentered() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>
-              {' '}
               <Text size='sm' fontWeight='500' as='div'>
                 Follow Us
               </Text>
             </ListHeader>
-            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
-              Facebook
-            </ChakraLink>
-            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
-              Twitter
-            </ChakraLink>
-            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
-              Dribbble
-            </ChakraLink>
-            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
-              Instagram
-            </ChakraLink>
-            <ChakraLink _hover={{ textDecor: 'underline' }} to={'#'}>
-              LinkedIn
-            </ChakraLink>
+            {Object.keys(socialMedia).map((key, i) => (
+              <ChakraLink
+                as='a'
+                _hover={{ textDecor: 'underline' }}
+                href={socialMedia[key]}
+                target='_blank'
+              >
+                {key}
+              </ChakraLink>
+            ))}
           </Stack>
         </SimpleGrid>
       </Container>

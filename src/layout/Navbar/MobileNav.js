@@ -39,15 +39,10 @@ const MobileNavItem = ({ label, children, to }) => {
             textDecoration: 'none',
           }}
         >
-          <Text
-            fontWeight={600}
-            color={useColorModeValue('gray.600', 'gray.200')}
-          >
-            {label}
-          </Text>
+          <Text fontWeight={600}>{label}</Text>
           {children && (
             <Icon
-              as={ChevronDownIcon}
+              as={<ChevronDownIcon />}
               transition={'all .25s ease-in-out'}
               transform={isOpen ? 'rotate(180deg)' : ''}
               w={6}

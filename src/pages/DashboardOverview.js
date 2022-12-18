@@ -47,12 +47,12 @@ const DashboardOverview = () => {
   ];
 
   return (
-    <Container maxW='7xl' minH='90vh'>
-      <Stack textAlign='center' my={10} maxW='xl' margin='0 auto'>
-        <Heading size={{ base: 'lg', md: 'xl' }}>
+    <Container maxW='7xl' minH='90vh' my={10}>
+      <Stack textAlign='center' spacing={5} my={10} maxW='xl' margin='0 auto'>
+        <Heading size={{ base: 'xl', md: '2xl' }}>
           Hello {user?.firstName}, {greetings}!
         </Heading>
-        <Text color='gray'>
+        <Text>
           Welcome to your Buylocate.com account! Here you can modify your
           account information, check the status of your orders.
         </Text>
