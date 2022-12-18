@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Header, Header2 } from 'src/components/custom';
 
 export const Blur = (props) => {
   return (
@@ -59,21 +60,24 @@ export default function AuthLayout({
         py={{ base: 10, sm: 20, lg: 32 }}
       >
         <Stack spacing={{ base: 10, md: 20 }} align='center'>
-          <Heading
+          <Header2
             lineHeight={1.1}
             fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}
           >
             Your virtual representative
             <br />
-            <Text
-              as='span'
-              bgGradient='linear(to-r, red.400,pink.400)'
-              bgClip='text'
-            >
-              #
-            </Text>
-            buylocate
-          </Heading>
+            <Link to='/'>
+              <Heading
+                as='span'
+                bgGradient='linear(to-r, red.400,pink.400)'
+                bgClip='text'
+                textDecor='underline'
+              >
+                #
+              </Heading>
+              buylocate
+            </Link>
+          </Header2>
         </Stack>
         <Stack
           bg={'gray.50'}
@@ -83,15 +87,7 @@ export default function AuthLayout({
           maxW={{ lg: 'lg' }}
         >
           <Stack spacing={4}>
-            <Text
-              color={'gray.800'}
-              lineHeight={1.1}
-              fontWeight='900'
-              fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
-              as='span'
-            >
-              {title}
-            </Text>
+            <Heading fontSize={{ base: '4xl', md: '5xl' }}>{title}</Heading>
           </Stack>
           {children}
           <Text mt={7}>

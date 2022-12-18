@@ -18,6 +18,8 @@ import {
 import useAuth from '../hooks/useAuth';
 import useIsMountedRef from '../hooks/useIsMountedRef';
 import { PATH_AUTH, PATH_DASHBOARD } from 'src/routes/path';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 
 const Login = () => {
   const [loading, setLoading] = React.useState(false);
@@ -28,11 +30,22 @@ const Login = () => {
   const { state } = useLocation();
   console.log(location.state);
 
+  const loginValidation = Yup.object().shape({
+    email: Yup.string().email().required('Please enter your email'),
+    password: Yup.string().required('Please enter your password'),
+  });
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    resolver: yupResolver(loginValidation),
+    shouldUseNativeValidation: false,
+  });
 
   async function onSubmit(values) {
     try {
@@ -77,41 +90,40 @@ const Login = () => {
       </Stack>
 
       <Box as={'form'} mt={10} onSubmit={handleSubmit(onSubmit)}>
-        <FormControl isInvalid={errors}>
-          <Stack spacing={5}>
-            <Stack spacing={1}>
-              <FormLabel htmlFor='name'>Email address</FormLabel>
-              <Input
-                id='email'
-                placeholder='Email address'
-                {...register('email', {
-                  required: 'This is required',
-                })}
-                py='6'
-                type='email'
-              />
-              <FormErrorMessage>
-                {errors.email && errors.email.message}
-              </FormErrorMessage>
-            </Stack>
-            <Stack spacing={1}>
-              <FormLabel htmlFor='name'>Password</FormLabel>
-              <Input
-                id='password'
-                type='password'
-                placeholder='Password'
-                {...register('password', {
-                  required: 'This is required',
-                })}
-                py='6'
-              />
-            </Stack>
-          </Stack>
+        <Stack spacing={5}>
+          <FormControl isInvalid={errors.email}>
+            <FormLabel htmlFor='name'>Email address</FormLabel>
+            <Input
+              id='email'
+              placeholder='Email address'
+              {...register('email', {
+                required: 'This is required',
+              })}
+              py='6'
+              type='email'
+            />
+            <FormErrorMessage>
+              {errors.email && errors.email.message}
+            </FormErrorMessage>
+          </FormControl>
 
-          <FormErrorMessage>
-            {errors.password && errors.password.message}
-          </FormErrorMessage>
-        </FormControl>
+          <FormControl isInvalid={errors.password}>
+            <FormLabel htmlFor='name'>Password</FormLabel>
+            <Input
+              id='password'
+              type='password'
+              placeholder='Password'
+              {...register('password', {
+                required: 'This is required',
+              })}
+              py='6'
+            />
+            <FormErrorMessage>
+              {errors.password && errors.password.message}
+            </FormErrorMessage>
+          </FormControl>
+        </Stack>
+
         <Button
           mt={4}
           colorScheme='brand'

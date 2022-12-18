@@ -10,6 +10,8 @@ import {
 } from '@chakra-ui/react';
 import { Header2 } from 'src/components/custom';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { Link as RouterLink } from 'react-router-dom';
+import { PATH_PAGES } from 'src/routes/path';
 
 function CallToAction() {
   return (
@@ -36,6 +38,8 @@ function CallToAction() {
                   colorScheme='brand'
                   size={{ base: 'md', lg: 'lg' }}
                   rightIcon={<ArrowForwardIcon />}
+                  as={RouterLink}
+                  to={PATH_PAGES.requestQuote}
                 >
                   Request a quote
                 </Button>

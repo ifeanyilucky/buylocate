@@ -34,6 +34,7 @@ import {
   removeAddress,
 } from 'src/redux/slices/user';
 import { useForm } from 'react-hook-form';
+import { PlusSquareIcon } from '@chakra-ui/icons';
 
 export default function Address() {
   const { user } = useAuth();
@@ -56,7 +57,7 @@ export default function Address() {
     <Page title='Account'>
       <Container maxW='full' h='full'>
         <Stack mb={10} spacing={5}>
-          <Heading size={{ base: 'md', md: 'lg' }}>Addresses</Heading>
+          <Heading size={{ base: 'lg', md: 'xl' }}>Addresses</Heading>
 
           {!addressBook.length ? (
             <Box>
@@ -118,7 +119,11 @@ export default function Address() {
             </Grid>
           )}
           <Box>
-            <Button onClick={onOpen} colorScheme='brand'>
+            <Button
+              onClick={onOpen}
+              colorScheme='brand'
+              rightIcon={<PlusSquareIcon />}
+            >
               Add new address
             </Button>
           </Box>

@@ -10,7 +10,9 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { Header2 } from '../custom';
+import { Link as RouterLink } from 'react-router-dom';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { PATH_PAGES } from 'src/routes/path';
 
 function ErrandsForYou() {
   return (
@@ -22,7 +24,7 @@ function ErrandsForYou() {
         pt={{ base: 20, md: 28 }}
         spacing={{ base: 10 }}
       >
-        <Stack ml='auto' mt={5}>
+        <Stack flex={1} mt={5}>
           <Image
             src='images/man-with-carton.jpeg'
             alt='man with documents'
@@ -63,6 +65,8 @@ function ErrandsForYou() {
                 colorScheme='brand'
                 size='lg'
                 rightIcon={<ArrowForwardIcon />}
+                as={RouterLink}
+                to={PATH_PAGES.requestQuote}
               >
                 Request a quote
               </Button>

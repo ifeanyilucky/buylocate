@@ -241,7 +241,7 @@ export const AccountIcon = () => (
     width='70%'
     height='70%'
     preserveAspectRatio='xMidYMid meet'
-    fill='currentColor'
+    fill='#000'
     aria-hidden='false'
     focusable='false'
   >
@@ -256,7 +256,7 @@ export const TrolleyIcon = () => (
     width='70%'
     height='70%'
     preserveAspectRatio='xMidYMid meet'
-    fill='currentColor'
+    fill='#000'
     aria-hidden='false'
     focusable='false'
   >
