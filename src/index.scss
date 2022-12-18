@@ -379,3 +379,22 @@ section {
       transparent 50%
     );
 }
+
+.site-header__cart-count {
+  align-items: center;
+  background-color: $primary-color;
+  border-radius: 9999px;
+  color: #fff;
+  display: flex;
+  font-size: 0.6667rem;
+  font-weight: 700;
+  height: 1.2rem;
+  justify-content: center;
+  line-height: 1;
+  min-width: 1.2rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  position: absolute;
+  right: 13px;
+  top: 1px;
+}

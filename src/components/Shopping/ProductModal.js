@@ -80,7 +80,7 @@ export default function ProductModal({ product, onClose, isOpen }) {
       toast({
         status: 'success',
         title: 'Success',
-        description: 'Item has been added to cart',
+        description: `${values.quantity} ${values.name} added to cart`,
         variant: 'top-accent',
         isClosable: true,
         position: 'top-right',

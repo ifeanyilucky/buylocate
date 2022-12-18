@@ -238,8 +238,8 @@ export const AccountIcon = () => (
   <svg
     viewBox='0 0 1024 1024'
     xmlns='http://www.w3.org/2000/svg'
-    width='70%'
-    height='70%'
+    width='85%'
+    height='85%'
     preserveAspectRatio='xMidYMid meet'
     fill='#000'
     aria-hidden='false'
@@ -253,8 +253,8 @@ export const TrolleyIcon = () => (
   <svg
     viewBox='0 0 1024 1024'
     xmlns='http://www.w3.org/2000/svg'
-    width='70%'
-    height='70%'
+    width='85%'
+    height='85%'
     preserveAspectRatio='xMidYMid meet'
     fill='#000'
     aria-hidden='false'

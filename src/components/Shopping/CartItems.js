@@ -32,6 +32,7 @@ import {
   deleteCart,
 } from 'src/redux/slices/product';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 export default function CartItems() {
   const {
@@ -56,7 +57,6 @@ export default function CartItems() {
   const handleDeleteCart = (productId) => {
     dispatch(deleteCart(productId));
   };
-  console.log(subtotal);
   return (
     <Drawer
       isOpen={showCart}
@@ -158,7 +158,11 @@ export default function CartItems() {
               Clear cart
             </Button>
             <Link to='/checkout'>
-              <Button w='100%' colorScheme='brand' py={7}>
+              <Button
+                w='100%'
+                colorScheme='brand'
+                rightIcon={<ArrowForwardIcon />}
+              >
                 Checkout ({fCurrency(total)})
               </Button>
             </Link>
