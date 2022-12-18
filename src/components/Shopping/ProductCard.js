@@ -36,9 +36,9 @@ export default function ProductCard({ product }) {
           onOpen={onOpen}
         />
       )}
-      <Card p='20px'>
-        <Flex direction={{ base: 'column' }} justify='center'>
-          <Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>
+      <Card>
+        <Flex direction={{ base: 'column' }} justify='center' mb={'15px'}>
+          <Box mb={{ base: '10px', '2xl': '20px' }} position='relative'>
             <Image
               src={image}
               w={{ base: '100%', '3xl': '100%' }}
@@ -89,23 +89,6 @@ export default function ProductCard({ product }) {
                   {description}
                 </Text>
               </Flex>
-              {/* <AvatarGroup
-              max={3}
-              color={textColorBid}
-              size='sm'
-              mt={{
-                base: '0px',
-                md: '10px',
-                lg: '0px',
-                xl: '10px',
-                '2xl': '0px',
-              }}
-              fontSize='12px'
-            >
-              {bidders.map((avt, key) => (
-                <Avatar key={key} src={avt} />
-              ))}
-            </AvatarGroup> */}
             </Flex>
             <Flex
               align={{
@@ -123,7 +106,7 @@ export default function ProductCard({ product }) {
                 xl: 'column',
                 '2xl': 'row',
               }}
-              mt='25px'
+              mt='5px'
             >
               <Link
                 to='#'

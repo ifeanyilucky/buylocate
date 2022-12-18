@@ -43,7 +43,14 @@ export default function ProductModal({ product, onClose, isOpen }) {
     dispatch(addCart(_product));
   };
 
-  const { register, handleSubmit, setValue, getValues, watch } = useForm({
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    getValues,
+    watch,
+    formState: { errors },
+  } = useForm({
     defaultValues: {
       id: product.id,
       name: name,
@@ -133,17 +140,20 @@ export default function ProductModal({ product, onClose, isOpen }) {
           <Divider colorScheme='gray.400' size={'2xl'} />
           <ModalBody height='100%' py={10}>
             <Stack>
-              <Stack spacing={0.5} maxW={{ base: '100%', md: '300px' }}>
+              <FormControl
+                isValid={errors.price}
+                spacing={0.5}
+                maxW={{ base: '100%', md: '300px' }}
+              >
                 <FormLabel>Enter price</FormLabel>
                 <Input
                   type='number'
                   placeholder='Enter price'
                   py={6}
-                  isRequired
-                  {...register('price')}
+                  {...register('price', { required: true })}
                 />
                 <FormHelperText>Minimum price is NGN 40,000</FormHelperText>
-              </Stack>
+              </FormControl>
             </Stack>
           </ModalBody>
           <Divider colorScheme='gray.400' size={'2xl'} />

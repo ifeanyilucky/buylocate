@@ -92,27 +92,31 @@ export default function WithSubnavigation() {
           direction={'row'}
           spacing={1}
         >
-          <>
-            <TrolleyIcon w={2} h={3} />
+          <IconButton
+            icon={
+              <>
+                <TrolleyIcon w={2} h={3} />
 
-            <Box
-              as='span'
-              style={{
-                fontSize: '12px',
-                background: 'brand',
-                borderRadius: '50%',
-                color: '#fff',
-                padding: '0 5px',
-                verticalAlign: 'top',
-                marginLeft: '-8px',
-              }}
-            >
-              {totalItems}
-            </Box>
-          </>
-
-          {/* onClick={() => setShowCart(true)} */}
-
+                <Box
+                  as='span'
+                  style={{
+                    fontSize: '12px',
+                    background: 'brand',
+                    borderRadius: '50%',
+                    color: '#fff',
+                    padding: '0 5px',
+                    verticalAlign: 'top',
+                    marginLeft: '-8px',
+                  }}
+                >
+                  {totalItems}
+                </Box>
+              </>
+            }
+            variant='unstyled'
+            aria-label='Toggle Cart'
+            onClick={() => setShowCart(true)}
+          />
           <AccountPopover />
         </Stack>
       </Flex>
