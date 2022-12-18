@@ -13,8 +13,8 @@ import {
   Text,
   Button,
   ButtonGroup,
+  Image,
 } from '@chakra-ui/react';
-import HeroImageForMobile from './HeroImageForMobile';
 import { PATH_PAGES } from 'src/routes/path';
 import { Header } from '../custom';
 
@@ -57,7 +57,7 @@ export default function HeroSection() {
     fadeInUp(heroBtn);
   }, [tl]);
   return (
-    <>
+    <div className='bg-gradient'>
       <Container maxW='7xl'>
         <div className='hero' ref={(el) => (hero = el)}>
           <Stack
@@ -74,7 +74,7 @@ export default function HeroSection() {
                   <div>
                     <Header>A helping hand to make your life easier</Header>
                   </div>
-                  <Text my={'8'}>
+                  <Text my={'8'} fontSize={{ base: 'lg', md: 'xl' }}>
                     Our errand service is designed for people in the diaspora
                     who wants to get one or two things done in Nigeria but they
                     are limited with help.
@@ -90,7 +90,7 @@ export default function HeroSection() {
                       Request a quote
                     </Button>
                     <Button
-                      colorScheme='gray'
+                      variant='light'
                       as={RouterLink}
                       to={PATH_PAGES.shopping}
                       rightIcon={<ArrowForwardIcon />}
@@ -101,45 +101,25 @@ export default function HeroSection() {
                 </div>
               </Stack>
             </Stack>
-            <Box flex={1} display={{ base: 'none', md: 'block' }}>
-              <div className='hero-media'>
-                <div
-                  className='image-mask'
-                  ref={(el) => (heroImageWrapper = el)}
-                >
-                  <img
-                    src='images/hero-mask.jpeg'
-                    className='hero-image'
-                    alt='hero-image'
-                  />
-                </div>
-                <div className='circular one'>
-                  <img
-                    src='images/girl-with-grocery.jpeg'
-                    className='circular-image'
-                    alt='...'
-                  />
-                </div>
-                <div className='circular two'>
-                  <img
-                    src='images/grocery5.avif'
-                    className='circular-image'
-                    alt='...'
-                  />
-                </div>
-                <div className='circular three'>
-                  <img
-                    src='images/grocery3.avif'
-                    className='circular-image'
-                    alt='...'
-                  />
-                </div>
-              </div>
+            <Box mr='auto' display={{ base: 'none', md: 'block' }}>
+              <Image
+                rounded='3xl'
+                height={{ base: '320px', lg: '500px', md: '430px' }}
+                fit={'cover'}
+                width={{ base: '100%', md: '320px', lg: '360px' }}
+                src='images/hero-mask.jpeg'
+                className='hero-image'
+                alt='hero-image'
+              />
             </Box>
           </Stack>
         </div>
       </Container>
-      <HeroImageForMobile />{' '}
-    </>
+      <section
+        data-v-16029162=''
+        data-v-07a2afe5=''
+        className='people-container'
+      />
+    </div>
   );
 }

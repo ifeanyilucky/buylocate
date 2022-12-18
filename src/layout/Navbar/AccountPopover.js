@@ -38,6 +38,8 @@ export default function AccountPopover() {
         <IconButton
           display={{ base: 'inline-flex', md: 'inline-flex' }}
           fontSize={'md'}
+          variant='light'
+          p={0}
           as={RouterLink}
           fontWeight={600}
           icon={<AccountIcon />}

@@ -6,6 +6,7 @@ import {
   Button,
   Box,
   useColorModeValue,
+  Image,
 } from '@chakra-ui/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -55,22 +56,10 @@ function Solutions() {
           spacing={20}
         >
           <Stack flex={1} spacing={8}>
-            <Text
-              bg={useColorModeValue('blue.50', 'brand.500')}
-              rounded='lg'
-              p={2}
-              alignSelf='flex-start'
-              color='brand.500'
-              textTransform='uppercase'
-              fontSize='sm'
-              fontWeight='600'
-            >
-              Solutions
-            </Text>
             <Header2>
               We can be your great business partner and help you grow strongly.
             </Header2>
-            <Text fontSize={{ base: 'md', lg: 'lg' }}>
+            <Text fontSize={{ base: 'lg', lg: 'xl' }}>
               Whether you are in Asia, Europe, America, Antartica or Australia,
               distance should not be a barrier. When you need an errand runner
               or a wheel to get the task done, we are here to help run errands
@@ -88,13 +77,13 @@ function Solutions() {
             </Box>
           </Stack>
           <Stack flex={1}>
-            <div className='image-slide-scroll' ref={(el) => (imgSlide = el)}>
-              <img
-                src='images/grocery3.avif'
-                alt='Groceries'
-                className='w-100 rounded is-reveal'
-              />
-            </div>
+            <Image
+              src='images/grocery6.jpg'
+              alt='Groceries'
+              rounded='xl'
+              width={{ base: '100%', md: '320px' }}
+              height={{ base: '320px', md: '430px' }}
+            />
           </Stack>
         </Stack>
       </Container>
