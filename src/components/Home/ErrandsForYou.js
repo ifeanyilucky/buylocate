@@ -10,6 +10,7 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { Header2 } from '../custom';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 function ErrandsForYou() {
   return (
@@ -18,17 +19,18 @@ function ErrandsForYou() {
         direction={{ base: 'column-reverse', md: 'row' }}
         justifyContent='space-between'
         alignItems={'center'}
-        py={{ base: 20, md: 28 }}
-        spacing={{ base: 8, md: 10, sm: 1 }}
+        pt={{ base: 20, md: 28 }}
+        spacing={{ base: 10 }}
       >
-        <Stack flex={1}>
-          <div className='image-mask'>
-            <img
-              src='images/man-with-envelope.jpeg'
-              className='hero-image'
-              alt='hero-image'
-            />
-          </div>
+        <Stack ml='auto' mt={5}>
+          <Image
+            src='images/man-with-carton.jpeg'
+            alt='man with documents'
+            rounded='3xl'
+            height={{ base: '320px', md: '450px' }}
+            fit={'cover'}
+            width={{ base: '100%', md: '320px' }}
+          />
         </Stack>
         <Stack flex={1}>
           <Stack spacing={6} maxW='lg' w='full' align={'right'}>
@@ -49,7 +51,7 @@ function ErrandsForYou() {
             </Stack>
             <Text
               className='my-4'
-              fontSize={{ base: 'md', lg: 'lg' }}
+              fontSize={{ base: 'lg', lg: 'xl' }}
               fontWeight={400}
             >
               Life's hectic schedule often makes it hard to complete personal
@@ -57,7 +59,11 @@ function ErrandsForYou() {
               professional virtual running services.
             </Text>
             <Box>
-              <Button colorScheme='brand' size='lg'>
+              <Button
+                colorScheme='brand'
+                size='lg'
+                rightIcon={<ArrowForwardIcon />}
+              >
                 Request a quote
               </Button>
             </Box>

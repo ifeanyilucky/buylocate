@@ -28,7 +28,13 @@ const whyUs = [
 function WhyChooseUs() {
   return (
     <Container maxW='7xl' py={20}>
-      <Stack align={'center'} maxW='2xl' textAlign='center' margin='0 auto'>
+      <Stack
+        align={'center'}
+        maxW='2xl'
+        py={10}
+        textAlign='center'
+        margin='0 auto'
+      >
         <Heading
           textTransform={'uppercase'}
           color={'blue.400'}
@@ -52,8 +58,8 @@ function WhyChooseUs() {
             key={i}
             margin='0 auto'
           >
-            <Heading fontSize={{ base: 'lg', md: 'xl' }}>{heading}</Heading>
-            <Text fontSize={{ base: 'md', lg: 'lg' }}>{text}</Text>
+            <Heading fontSize={{ base: 'xl', md: '2xl' }}>{heading}</Heading>
+            <Text fontSize={{ base: 'lg', lg: 'xl' }}>{text}</Text>
           </Stack>
         ))}
       </SimpleGrid>
