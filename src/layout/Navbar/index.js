@@ -82,23 +82,13 @@ export default function WithSubnavigation() {
         <Stack flex={1} justify={'flex-end'} direction={'row'} spacing={1}>
           <ButtonGroup>
             <IconButton
+              position='relative'
               icon={
                 <>
                   <TrolleyIcon />
-                  <Box
-                    as='span'
-                    style={{
-                      fontSize: '12px',
-                      background: 'brand',
-                      borderRadius: '50%',
-                      color: '#fff',
-                      padding: '0 5px',
-                      verticalAlign: 'top',
-                      marginLeft: '-8px',
-                    }}
-                  >
-                    {totalItems}
-                  </Box>
+                  <div class='site-header__cart-count'>
+                    <span>{totalItems}</span>
+                  </div>
                 </>
               }
               variant='unstyled'
