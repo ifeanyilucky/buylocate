@@ -81,6 +81,7 @@ function Solutions() {
               src='images/grocery6.jpg'
               alt='Groceries'
               rounded='xl'
+              fit='cover'
               width={{ base: '100%', md: '320px' }}
               height={{ base: '320px', md: '430px' }}
             />
