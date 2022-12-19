@@ -20,9 +20,16 @@ export default function CheckoutLayout() {
   const { cart, total, subtotal } = checkout;
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Box p={8} align={'center'}>
+      <Box p={8} mx='auto'>
         <Logo />
         <Outlet />
+        <Divider orientation='horizontal' />
+        <Box py={10}>
+          <Text color='gray' fontSize={{ base: 'md' }}>
+            &copy; 2022 Buylocate. All Rights Reserved
+          </Text>
+        </Box>
+        <Divider orientation='horizontal' />
       </Box>
       <Center height='100%'>
         <Divider orientation='vertical' />

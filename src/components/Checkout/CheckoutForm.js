@@ -117,9 +117,6 @@ export default function CheckoutForm() {
   return (
     <Box onSubmit={handleSubmit(onSubmit)} as='form' w='100%'>
       <Stack spacing={{ base: '8', md: '10' }} flex='2' w='100%'>
-        <Heading fontSize='2xl' fontWeight='extrabold'>
-          Billing details
-        </Heading>
         <Stack spacing={15} direction='column' w='100%'>
           <Stack spacing={5} direction={{ base: 'column', md: 'row' }} w='100%'>
             <FormControl isInvalid={errors.firstName}>

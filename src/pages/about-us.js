@@ -14,7 +14,7 @@ import { Header } from 'src/components/custom';
 
 const About = () => {
   return (
-    <Page title='About us'>
+    <Box as={Page} title='About us'>
       <Container maxWidth='7xl' py={10}>
         <Stack
           maxW={{ md: '70%', base: '100%' }}
@@ -100,7 +100,7 @@ const About = () => {
           </Box>
         </Stack>
       </Container>
-    </Page>
+    </Box>
   );
 };
 

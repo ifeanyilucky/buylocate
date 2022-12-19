@@ -36,8 +36,14 @@ const Checkout = () => {
       {isEmptyCart ? (
         <EmptyCart />
       ) : (
-        <Stack direction={{ base: 'column-reverse', lg: 'row' }} w={'100%'}>
+        <Stack
+          direction={{ base: 'column-reverse', lg: 'row' }}
+          maxW={'500px'}
+          w={'100%'}
+          mx='auto'
+        >
           <CheckoutForm />
+
           {/* <Flex direction='column' align='center' flex='1'>
             <CartOrderSummary cart={cart} subtotal={subtotal} total={total} />
              <HStack mt='6' fontWeight='semibold'>
