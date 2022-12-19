@@ -13,11 +13,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import ScrollToTop from './components/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HelmetProvider>
     <BrowserRouter>
+      <ScrollToTop />
       <ChakraProvider theme={theme}>
         <ReduxProvider store={store}>
           <PersistGate
