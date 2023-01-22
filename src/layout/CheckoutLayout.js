@@ -19,8 +19,16 @@ export default function CheckoutLayout() {
   const { checkout } = useSelector((state) => state.product);
   const { cart, total, subtotal } = checkout;
   return (
-    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Box p={8} mx='auto'>
+    <Stack
+      minH={'100vh'}
+      direction={{ base: 'column', md: 'row' }}
+      sx={{
+        '@media max-width(768px)': {
+          display: 'none',
+        },
+      }}
+    >
+      <Box p={8} mx='auto' maxW='100%'>
         <Logo />
         <Outlet />
         <Divider orientation='horizontal' />

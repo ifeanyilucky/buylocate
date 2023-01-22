@@ -38,7 +38,7 @@ const Checkout = () => {
       ) : (
         <Stack
           direction={{ base: 'column-reverse', lg: 'row' }}
-          maxW={'500px'}
+          maxW={'100%'}
           w={'100%'}
           mx='auto'
         >

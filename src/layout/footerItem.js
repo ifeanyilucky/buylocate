@@ -30,10 +30,6 @@ export const footerItems = [
     title: 'Other',
     subItems: [
       {
-        name: 'FAQs',
-        link: PATH_PAGES.faqs,
-      },
-      {
         name: 'Contact us',
         link: PATH_PAGES.contactUs,
       },
