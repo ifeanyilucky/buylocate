@@ -7,7 +7,7 @@ import {
   MenuList,
   Button,
 } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { PATH_AUTH, PATH_DASHBOARD } from 'src/routes/path';
 import { AccountIcon } from 'src/components/svgIcons';
 import useAuth from 'src/hooks/useAuth';
@@ -27,7 +27,8 @@ export default function AccountPopover() {
       link: PATH_DASHBOARD.addressList,
     },
   ];
-  const { logout } = useAuth();
+  const { logout, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   return (
     <Menu>
       <MenuButton
@@ -46,17 +47,35 @@ export default function AccountPopover() {
           icon={<AccountIcon />}
         />
       </MenuButton>
-      <MenuList>
-        {accountItem.map((item) => (
-          <MenuItem as={RouterLink} to={item.link}>
-            {item.title}
-          </MenuItem>
-        ))}
-        <MenuDivider />
-        <MenuItem color='red.400' onClick={logout}>
-          Log out
-        </MenuItem>
-      </MenuList>
+      {isAuthenticated ? (
+        <>
+          <MenuList>
+            {accountItem.map((item) => (
+              <MenuItem as={RouterLink} to={item.link}>
+                {item.title}
+              </MenuItem>
+            ))}
+            <MenuDivider />
+            <MenuItem color='red.400' onClick={logout}>
+              Log out
+            </MenuItem>
+          </MenuList>
+        </>
+      ) : (
+        <>
+          <MenuList>
+            <MenuItem color='red.400' onClick={() => navigate(PATH_AUTH.login)}>
+              Log in
+            </MenuItem>
+            <MenuItem
+              color='red.400'
+              onClick={() => navigate(PATH_AUTH.register)}
+            >
+              Register
+            </MenuItem>
+          </MenuList>
+        </>
+      )}
     </Menu>
   );
 }

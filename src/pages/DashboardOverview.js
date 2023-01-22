@@ -14,7 +14,7 @@ import {
   Tabs,
 } from '@chakra-ui/react';
 import axios from '../utils/axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import Page from 'src/components/Page';
 import useAuth from 'src/hooks/useAuth';
 import Address from './Addresses';
@@ -24,20 +24,24 @@ import { getOrders } from 'src/redux/slices/user';
 
 const DashboardOverview = () => {
   const { user } = useAuth();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { tab } = useParams();
+  console.log(tab);
 
-  const [tabIndex, setTabIndex] = useState('Overview');
+  const [tabIndex, setTabIndex] = useState('overview');
   const tabItem = [
     {
-      title: 'Overview',
+      title: 'overview',
       element: <Address />,
     },
     {
-      title: 'Orders',
+      title: 'orders',
       element: <AllOrders />,
     },
     {
-      title: 'Addresses',
+      title: 'addresses',
       element: <Address />,
     },
   ];
@@ -46,6 +50,13 @@ const DashboardOverview = () => {
     parseInt((new Date().getHours() / 24) * 3)
   ];
 
+  useEffect(() => {
+    if (tab) {
+      setTabIndex(tab);
+    } else {
+      setTabIndex('overview');
+    }
+  }, []);
   return (
     <Container maxW='7xl' minH='90vh' my={10}>
       <Stack textAlign='center' spacing={5} my={10} maxW='xl' margin='0 auto'>
@@ -68,7 +79,14 @@ const DashboardOverview = () => {
       >
         <TabList>
           {tabItem.map((item) => (
-            <Tab>{item.title}</Tab>
+            <Tab
+              sx={{ textTransform: 'capitalize' }}
+              onClick={() => {
+                navigate(`/dashboard/${item.title}`);
+              }}
+            >
+              {item.title}
+            </Tab>
           ))}
         </TabList>
         <TabPanels>

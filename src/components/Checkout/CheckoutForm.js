@@ -115,8 +115,8 @@ export default function CheckoutForm() {
     today.getFullYear() + '-' + ('0' + (today.getMonth() + 11)).slice(-2);
 
   return (
-    <Box onSubmit={handleSubmit(onSubmit)} as='form' w='100%'>
-      <Stack spacing={{ base: '8', md: '10' }} flex='2' w='100%'>
+    <Box onSubmit={handleSubmit(onSubmit)} as='form' w='100%' maxW={'100%'}>
+      <Stack spacing={{ base: '8', md: '10' }} flex='2' maxW={'100%'} w='100%'>
         <Stack spacing={15} direction='column' w='100%'>
           <Stack spacing={5} direction={{ base: 'column', md: 'row' }} w='100%'>
             <FormControl isInvalid={errors.firstName}>

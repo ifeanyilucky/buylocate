@@ -24,10 +24,6 @@ export const NAV_ITEMS = [
     //   },
     // ],
   },
-  {
-    label: 'FAQs',
-    to: PATH_PAGES.faqs,
-  },
 
   {
     label: 'Our Services',

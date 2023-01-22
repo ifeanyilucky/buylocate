@@ -60,9 +60,8 @@ export default function Router() {
       ),
       children: [
         { path: '', element: <DashboardOverview /> },
+        { path: ':tab', element: <DashboardOverview /> },
         // { path: 'orders', element: <Orders /> },
-        { path: 'register', element: <Register /> },
-        { path: 'addresses', element: <Address /> },
       ],
     },
   ]);

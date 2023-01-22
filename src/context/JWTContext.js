@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useReducer } from 'react';
 import axios from '../utils/axios';
-import Cookies from 'universal-cookie';
 import { isValidToken, setSession, decoded } from '../utils/jwt';
 import { PATH_AUTH } from 'src/routes/path';
 import { useNavigate } from 'react-router-dom';
@@ -61,12 +60,11 @@ const AuthContext = createContext({
 export default function AuthProvider(props) {
   const { children } = props;
   const [state, dispatch] = useReducer(reducer, initialState);
-  const cookie = new Cookies();
+
   const navigate = useNavigate();
   useEffect(() => {
     const initialize = async () => {
-      const token = cookie.get('token');
-
+      const token = window.localStorage.getItem('token');
       try {
         if (token && isValidToken(token)) {
           setSession(token);

@@ -1,6 +1,5 @@
 import jwtDecode from 'jwt-decode';
 import axiosInstance from './axios';
-import Cookies from 'universal-cookie';
 
 let decoded;
 const isValidToken = (token) => {
@@ -17,7 +16,6 @@ const setSession = (token) => {
     localStorage.setItem('token', token);
     axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
   } else {
-    // destroyCookie(null, 'token');
     localStorage.clear();
     delete axiosInstance.defaults.headers.common.Authorization;
   }

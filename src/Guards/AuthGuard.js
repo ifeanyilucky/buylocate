@@ -26,7 +26,7 @@ export default function AuthGuard({ children }) {
 
   return (
     <>
-      {!user ? (
+      {!isAuthenticated ? (
         <Box height='100vh'>
           <CircularProgress
             position='absolute'
